@@ -13,9 +13,10 @@ app.use(express.json());
 app.post("/api/deepseek", async(req,res) => {
     try{
         const { prompt } = req.body;
-        const response = await axios.post(`${DEEPSEEK_API}/v1/chat/completions`,{
+        console.log(req.body);
+        const response = await axios.post("http://localhost:11434/v1/chat/completions",{
             model: "deepseek-r1",
-            message: [{role:"user",content: prompt}],
+            messages: [{role:"user",content: prompt}],
         });
         res.json(response.data);
     }catch(error){
