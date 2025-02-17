@@ -88,4 +88,3 @@ deepseekapp/
 ## **📌 Notes**
 * Ensure that DeepSeek-R1 is running before starting the backend.
 * The backend listens on port 5000, while the frontend runs on port 3000.
-* Modify the `.env` file in the backend to configure API URLs if needed.
