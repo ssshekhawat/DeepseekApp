@@ -8,7 +8,7 @@ This is a full-stack application integrating **DeepSeek-R1** for AI-powered conv
 
 Follow the steps below to set up and run the backend and frontend applications.  
 
-## **📌 Backend Setup (`deepseekbackend`)**  
+## **📌 Backend Setup (`deepseek-backend`)**  
 
 The backend application serves as a bridge between the frontend and **DeepSeek-R1**, handling API requests and responses.  
 
@@ -16,7 +16,7 @@ The backend application serves as a bridge between the frontend and **DeepSeek-R
 
 Create a new directory and initialize a Node.js project:  
 ```sh
-mkdir deepseekbackend && cd deepseekbackend
+mkdir deepseek-backend && cd deepseek-backend
 npm init -y
 ```
 
@@ -47,7 +47,45 @@ ollama run deepseek-r1
 By default, it runs on http://localhost:11434
 
 ---
-## **📌 Frontend Setup (`deepseekfrontend`)**
+## **📌 Frontend Setup (`deepseek-frontend`)**
 
 The frontend is a React.js application that provides a UI for interacting with the AI model.
 
+## **1️⃣ Create the React App**
+
+```sh
+npx create-react-app deepseek-frontend
+cd deepseek-frontend
+```
+
+## **2️⃣ Install Required Dependencies**
+
+```sh
+npm install axios
+```
+* axios → Used for making API requests to the backend
+
+## **3️⃣ Run the Frontend Application**
+```sh
+npm start
+```
+The React application will start on http://localhost:3000/.
+
+---
+## **🛠️ Project Structure**
+
+```sh
+deepseekapp/
+│── deepseek-backend/   # Backend (Node.js, Express)
+│   ├── server.js       # API Server
+│   ├── .env            # Environment Variables
+│── deepseek-frontend/  # Frontend (React.js)
+│   ├── src/            # React Components & Logic
+│   ├── App.js          # Main Component
+```
+
+
+## **📌 Notes**
+* Ensure that DeepSeek-R1 is running before starting the backend.
+* The backend listens on port 5000, while the frontend runs on port 3000.
+* Modify the `.env` file in the backend to configure API URLs if needed.
